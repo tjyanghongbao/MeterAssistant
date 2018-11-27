@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/scanCode/scanCode",
+    "pages/record/record",
+    "pages/open-data/open-data"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Meter Assistant",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/scanCode/scanCode",
+        "text": "Scan",
+        "iconPath": "icon/edit.png",
+        "selectedIconPath": "icon/edit.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "Record",
+        "iconPath": "icon/history.png",
+        "selectedIconPath": "icon/history.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "Me",
+        "iconPath": "icon/me.png",
+        "selectedIconPath": "icon/me.png"
+      }
+    ]
+  }
+}

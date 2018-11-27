@@ -1,0 +1,50 @@
+<!--pages/scanCode/scanCode.wxml-->
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+<view class="container">
+  <template is="head" data="{{title: 'chooseLocation'}}" />
+
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="page-body-info">
+        <text class="page-body-text-small">Current Loaction</text>
+        <block wx:if="{{hasLocation === false}}">
+          <text class="page-body-text">To be choose a location</text>
+        </block>
+        <block wx:if="{{hasLocation === true}}">
+          <text class="page-body-text">{{locationAddress}}</text>
+          <view class="page-body-text-location">
+            <text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</text>
+            <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+          </view>
+        </block>
+        <button class='btn'  bindtap="chooseLocation">Select Location</button>
+      </view>
+      <!-- <view class="btn-area">
+        <button type="primary" bindtap="chooseLocation">Choose Loaction</button>       
+      </view> -->
+
+      <view class="page-section">
+        <view class="page-section-title">Meter No.</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="txt_meterID" value='{{meterID}}'  type='number' placeholder="Please scan or input meter No. here" />
+            </view>
+          </view>
+        </view>
+        <view class="btn-area">
+          <button class="btn" bindtap="scanCode">Scan Code</button>
+        </view>
+      </view>
+
+      <view class="btn-area">
+        <!-- <button  formType="submit" plain='true'>Submit</button> -->
+        <button  formType="submit" class='btn_submit'>Submit</button>
+        <button formType="reset" >Reset</button>
+      </view>
+    </form>
+  </view>
+
+  <template is="foot" />
+</view>

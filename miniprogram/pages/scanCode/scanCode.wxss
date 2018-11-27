@@ -1,0 +1,28 @@
+/* pages/scanCode/scanCode.wxss */
+@import "../../common/lib/weui.wxss";
+
+label {
+  display: inline-block;
+  min-width: 270rpx;
+  margin-right: 20rpx;
+}
+form{
+  width: 100%;
+}
+.picker-text {
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.btn{
+  /* color: #586C94; */
+   background-color:  #225aa5;
+   color: white;
+   border:  #225aa5;
+   
+}
+
+.btn_submit{
+  color: #225aa5;
+  background-color: transparent
+}

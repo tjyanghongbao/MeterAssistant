@@ -1,0 +1,35 @@
+<!--pages/record/record.wxml-->
+<block wx:for="{{meterloaction}}" wx:key="">
+  <!-- <view class='content'>
+    <view class='label'>
+      <text>Meter No: </text>
+      <text>{{item.MeterNo}}</text>
+    </view>
+    <view class='label'>
+      <text>Latitude: </text>
+      <text>{{item.latitude}}</text>
+    </view>
+    <view class='label'>
+      <text>longitude: </text>
+      <text>{{item.longitude}}</text>
+    </view>
+    <view class='label'>
+      <text>Address: </text>
+      <text>{{item.locationAddress}}</text>
+    </view>
+    <button data-id='{{item._id}}' bindtap='onDel'>Delete</button>
+    <button data-id='{{item._id}}' bindtap='onUpdate'>Edit</button>
+  </view> -->
+
+  <view class="i-swipeout-demo">
+    <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+      <view slot="content">
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-h2">Meter: {{item.MeterNo}}</view>
+          <view class="i-swipeout-des-detail">{{item.locationAddress}}</view>
+        </view>
+      </view>
+    </i-swipeout>
+
+  </view>
+</block>

@@ -3,40 +3,16 @@ const app = getApp()
 
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
+    avatarUrl: 'user-unlogin.png',
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: '',
-    list: [
-      {
-        id: 'api',
-        name: 'Extension',
-        open: true,
-        pages: [
-         {
-            zh: 'Share',
-            url: 'share/share'
-          },  {
-            zh: 'Customer Message',
-            url: 'custom-message/custom-message'
-          },  {
-            zh: 'Setting',
-            url: 'setting/setting'
-          }
-        ]
-      }
-    ],
-    isSetTabBarPage: true,
+    nickName:'Click to authorize'
   },
 
   onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
+   
 
     // 获取用户信息
     wx.getSetting({
@@ -61,7 +37,8 @@ Page({
       this.setData({
         logged: true,
         avatarUrl: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
+        userInfo: e.detail.userInfo,
+        
       })
     }
   },

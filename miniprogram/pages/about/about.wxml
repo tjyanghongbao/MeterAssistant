@@ -1,0 +1,29 @@
+<!--pages/about/about.wxml-->
+
+  <i-steps current="{{verticalCurrent}}" direction="vertical">
+  <i-step status="finish" icon="barrage">
+      <view slot="title">
+        FINISHED
+      </view>
+      <view slot="content">
+        Locate-Scan-Submit 
+      </view>
+    </i-step>
+    <i-step status="process" icon="brush">
+      <view slot="title">
+        ON THE MARCH
+      </view>
+      <view slot="content" icon="camera">
+        Navigate
+      </view>
+    </i-step>
+    <i-step icon="collection">
+      <view slot="title">
+        TARGET
+      </view>
+      <view slot="content">
+        Locate altitude; Photo with timestamp
+      </view>
+    </i-step>
+
+  </i-steps>

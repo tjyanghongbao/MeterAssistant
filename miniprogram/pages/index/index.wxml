@@ -1,40 +1,30 @@
 <!--index.wxml-->
-<view class="container">
+<view >
 
   <!-- 用户 openid -->
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
     <view>
       <button class="userinfo-nickname" bindtap="onGetOpenid">{{userInfo.nickName}}</button>
+      
     </view>
+    
   </view>
 
-  
-    <view class="kind-list">
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-        <view class="kind-list-item">
-          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
-            <view class="kind-list-text">{{item.name}}</view>
-            <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
-          </view>
-          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
-            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
-              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
-                <navigator url="pages/{{page.url}}" class="navigator" wx:if="{{page.url !== '@set-tab-bar'}}">
-                  <view class="navigator-text">{{page.zh}}</view>
-                  <view class="navigator-arrow"></view>
-                </navigator>
-                <view wx:else class="navigator" bindtap="enterSetTabBarPage">
-                  <view class="navigator-text">{{page.zh}}</view>
-                  <view class="navigator-arrow"></view>
-                </view>
-              </block>
-            </view>
-          </view>
-        </view>
-      </block>
-    </view>
-  
-
+  <view class="userInfo">
+    <i-panel class="cell-panel-demo">
+      <i-cell-group>
+        <i-cell title="Share" is-link is-link url="/pages/share/share"> 
+        <i-icon type="share_fill" slot="icon" />
+        </i-cell>
+        <i-cell title="Contact us" is-link url="/pages/custom-message/custom-message">
+        <i-icon type="interactive_fill" slot="icon"/>
+        </i-cell>
+        <i-cell title="About" is-link url="/pages/about/about" value="Version 1.0.0">
+        <i-icon type="like_fill" slot="icon" />
+        </i-cell>
+      </i-cell-group>
+    </i-panel>
+  </view>
 
 </view>

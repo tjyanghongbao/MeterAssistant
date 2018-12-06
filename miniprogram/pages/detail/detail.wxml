@@ -1,0 +1,11 @@
+<!--pages/detail/detail.wxml-->
+<view class="container_detail">  
+    <view class="title">{{MeterNo}}</view>
+    <view class="previewimg">  
+        <image src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>  
+    </view>
+    <view class="content">
+      {{locationAddress}}
+    </view>
+    <button  bindtap="findLocation">Navigation</button>
+</view>

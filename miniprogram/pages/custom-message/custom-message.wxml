@@ -1,0 +1,20 @@
+<!--pages/custom-message/custom-message.wxml-->
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'customMessage'}}"/>
+
+  <view class="page-body">
+    <view class="page-body-wrapper">
+      <text class="page-body-title">
+        Click the icon to consult
+      </text>
+      <view class="page-body-line">
+        <contact-button size="40" session-from="weapp"></contact-button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

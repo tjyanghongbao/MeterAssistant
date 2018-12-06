@@ -1,15 +1,13 @@
 <!--pages/scanCode/scanCode.wxml-->
-<import src="../../../common/head.wxml" />
-<import src="../../../common/foot.wxml" />
 <view class="container">
-  <template is="head" data="{{title: 'chooseLocation'}}" />
+
 
   <view class="page-body">
     <form catchsubmit="formSubmit" catchreset="formReset">
-      <view class="page-body-info">
+      <view class="page-loaction-info">
         <text class="page-body-text-small">Current Loaction</text>
         <block wx:if="{{hasLocation === false}}">
-          <text class="page-body-text">To be choose a location</text>
+          <!-- <text class="page-body-text">To be choose a location</text> -->
         </block>
         <block wx:if="{{hasLocation === true}}">
           <text class="page-body-text">{{locationAddress}}</text>
@@ -18,33 +16,44 @@
             <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
           </view>
         </block>
-        <button class='btn'  bindtap="chooseLocation">Select Location</button>
+        <button class='btn' bindtap="chooseLocation">Select Location</button>
       </view>
-      <!-- <view class="btn-area">
-        <button type="primary" bindtap="chooseLocation">Choose Loaction</button>       
-      </view> -->
+
 
       <view class="page-section">
         <view class="page-section-title">Meter No.</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd">
-              <input class="weui-input" name="txt_meterID" value='{{meterID}}'  type='number' placeholder="Please scan or input meter No. here" />
+              <input class="weui-input" name="txt_meterID" value='{{meterID}}' type='number' placeholder="Please scan or input meter No. here" />
             </view>
           </view>
         </view>
+
         <view class="btn-area">
-          <button class="btn" bindtap="scanCode">Scan Code</button>
+          <button class="btn" bindtap="scanCode">Scan Barcode</button>
         </view>
+      </view>
+
+
+
+      <view class="container_Image">
+        <image wx-if="{{image}}" class="idcard" src="{{image}}"></image>
+      </view>
+
+      <view class='btn-area'>
+        <button class="btn" bindtap="uploadFile"> Take Photo</button>
       </view>
 
       <view class="btn-area">
         <!-- <button  formType="submit" plain='true'>Submit</button> -->
-        <button  formType="submit" class='btn_submit'>Submit</button>
-        <button formType="reset" >Reset</button>
+
+        <button formType="submit" class='btn_submit'>Submit</button>
+
+        <button formType="reset">Reset</button>
       </view>
     </form>
   </view>
 
-  <template is="foot" />
+  <!-- <template is="foot" /> -->
 </view>

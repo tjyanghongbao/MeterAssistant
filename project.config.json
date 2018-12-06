@@ -10,7 +10,8 @@
 	},
 	"appid": "wx96ee77b8af8236ac",
 	"projectname": "Meter",
-	"libVersion": "2.3.2",
+	"libVersion": "2.4.1",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -53,6 +54,17 @@
 					"name": "opendata",
 					"pathName": "pages/open-data/open-data",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "about",
+					"pathName": "pages/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "Route",
+					"pathName": "pages/myRoute/myRoute"
 				}
 			]
 		}
